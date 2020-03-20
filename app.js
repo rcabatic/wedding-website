@@ -14,13 +14,14 @@ var storiesRoutes			= require("./routes/stories"),
 
 
 //========= Connect to MONGO DB (Cloud or Local) ================
-var url = process.env.DATABASEURL || "mongodb://localhost:27017/wedding"; //DEFAULT vals
+var url = (process.env.DATABASEURL || "mongodb://localhost:27017/wedding"); //DEFAULT vals
 console.log(process.env.DATABASEURL);
 
 mongoose.connect( url , {
 	useNewUrlParser: true,
 	useCreateIndex: true,
-	useUnifiedTopology: true
+	useUnifiedTopology: true,
+	useFindAndModify: false,
 }).then(() =>{
 	console.log("Connected to Mongo Atlas DB!");
 }).catch(err => {
@@ -29,7 +30,7 @@ mongoose.connect( url , {
 
 //Need TO ADD Passports Config when set up password//
 
-app.use(bodyParser.urlencoded({extended:true}));
+//app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
