@@ -53,6 +53,6 @@ app.use("/details/", detailsRoutes);
 app.use("/travels/", travelsRoutes);
 
 //==================================== APP listen==============================================
-app.listen(3000, function(){
+app.listen(process.env.PORT || 3000, function(){
 	console.log("Wedding Website running on 3000");
 })
