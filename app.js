@@ -6,9 +6,16 @@ var express 	= require("express"),
 	methodOverride			= require("method-override"),
 	  flash		= require("connect-flash");
 
-var url = process.env.DATABASEURL || "mongodb://localhost:27017/wedding"; //DEFAULT vals
-console.log(process.env.DATABASEURL); //shows you which one..
+//========= Requiring Routes ================ JS files ===
+var storiesRoutes			= require("./routes/stories"),
+	indexRoutes			= require("./routes/index"),
+	detailsRoutes			= require("./routes/details"),
+	travelsRoutes			= require("./routes/travels");
 
+
+//========= Connect to MONGO DB (Cloud or Local) ================
+var url = process.env.DATABASEURL || "mongodb://localhost:27017/wedding"; //DEFAULT vals
+console.log(process.env.DATABASEURL);
 
 mongoose.connect( url , {
 	useNewUrlParser: true,
@@ -20,10 +27,10 @@ mongoose.connect( url , {
 	console.log("Error! : ", err.message)
 });
 
-//Need Passports Config when set up password
+//Need TO ADD Passports Config when set up password//
 
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(express.static(__dirname + "/public")); //safer if directory changed., for stylesheet. 
+app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
 //app.use(flash()); //flash messages.
@@ -36,18 +43,15 @@ app.use(function(req, res, next){
 	next(); //very important
 });
 
-//==ROUTES== 
-	
-app.get("/", function(req, res){
-	res.render("home");
-});
 
-app.get("/aboutUs", function(req, res){
-	res.render("aboutUs");
-});
+//=========================ROUTER USE FUNCTION:===========================
 
+app.use("/", indexRoutes);
+app.use("/stories/", storiesRoutes);
+app.use("/details/", detailsRoutes);
+app.use("/travels/", travelsRoutes);
 
-//==== APP listen======
+//==================================== APP listen==============================================
 app.listen(3000, function(){
 	console.log("Wedding Website running on 3000");
 })
