@@ -1,0 +1,23 @@
+body{
+	font-family: 'Spectral', serif;
+	background-color: #e8eff2
+}
+
+.img-box-custom{
+	max-width: 100%;
+	height: auto;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+    -webkit-background-size: cover;
+}
+/* about us page */
+#arseny-photo{
+	background-image: url(https://i.imgur.com/2xjcfTv.jpg);
+	background-position: right 50% bottom 50%;
+}
+
+#richelle-photo{
+	background-image: url(https://i.imgur.com/tznzGgh.jpg);
+	background-position: right 50% bottom 25%;
+}
