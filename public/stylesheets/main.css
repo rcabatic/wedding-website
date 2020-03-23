@@ -2,6 +2,10 @@ body{
 	font-family: 'Spectral', serif;
 	background-color: #e8eff2
 }
+h1, h2, card-title{
+	font-family: 'Rubik', sans-serif;
+}
+
 
 .img-box-custom{
 	max-width: 100%;
@@ -20,4 +24,10 @@ body{
 #richelle-photo{
 	background-image: url(https://i.imgur.com/tznzGgh.jpg);
 	background-position: right 50% bottom 25%;
+}
+
+/* WEDDING PARTY PAGE */
+
+.fullpage{
+	background-color: #ede1b4;
 }
