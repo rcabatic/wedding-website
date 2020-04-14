@@ -3,7 +3,50 @@
 	<h1>
 	RSVP :D
 	</h1>
+	
+	<form>
+	  <div class="form-group row">
+		<label for="name" class="col-sm-2 col-form-label">Name</label>
+		<div class="col-sm-10">
+		  <input type="text" class="form-control" id="name" placeholder="Name">
+		</div>
+	  </div>
+	<div class="form-group row">
+		<label for="email" class="col-sm-2 col-form-label">Email</label>
+		<div class="col-sm-10">
+		  <input type="email" class="form-control" id="email" placeholder="Email">
+		</div>
+	  </div>
+	
+	<div class="form-group">
+		<label for="seeAnotherField">Do You Want To See Another Field?</label>
+		<select class="form-control" id="joinUs">
+			  <option value="no">No Way.</option>
+			  <option value="yes">Absolutely!</option>
+		</select>
+  	</div>
+		
+		<div class="form-group" id="rejectGroup">
+			<label for="exampleFormControlTextarea1">Sorry to hear that! If you feel like it, please let us know why and if you have any other comments or concerns below:</label>
+			<textarea class="form-control" id="rejectComments" rows="4" placeholder="I love you guys, but...."></textarea>
+		</div>
+		
+		<div class="form-group" id="acceptGroup">
+			<label for="exampleFormControlTextarea1">YAy!</label>
+			<textarea class="form-control" id="rejectComments" rows="4" placeholder="I love you guys, but...."></textarea>
+		</div>
+		
+	  <div class="form-group row" id="submitGroup">
+		<div class="col-sm-10">
+		  <button type="submit" class="btn btn-primary">Submit</button>
+		</div>
+	  </div>
+	</form>
 </div>
 
+
+<!-- <script type="text/javascript" src="/WeddingWebsite/views/rsvp.js"></script> -->
+<!-- <script type="text/javascript" src="../views/rsvp.js"></script>
+<script type="text/javascript" src="./rsvp.js"></script> -->
 
 <%- include("./partials/footer") %>

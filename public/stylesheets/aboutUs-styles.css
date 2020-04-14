@@ -1,0 +1,24 @@
+#heading-group h1{
+	font-size: 4rem;
+}
+
+.content{
+	margin-bottom: 50px;
+}
+
+.blurb{
+	height: 430px;
+	overflow: auto;
+}
+.blurb h2{
+	font-size: 3rem;
+}
+
+.blurb p{
+	color: #2e4756;
+	font-size: 1.125rem;
+	line-height: 1.60;
+	text-align: justify;
+	background-color: rgb(237,225,180, 0.2);
+}
+
